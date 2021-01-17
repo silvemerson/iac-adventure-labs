@@ -6,9 +6,9 @@ This project aims to create and configure an infrastructure as a code using Terr
 
 <h3>Requirements:</h3>
 
-		- aws-cli
-        - Terraform
-        - Ansible
+	- aws-cli
+    - Terraform
+    - Ansible
 
 - Clone the repo and give the automate.sh file permission with chmod + x
 
