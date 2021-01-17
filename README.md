@@ -17,6 +17,8 @@ This project aims to create and configure an infrastructure as a code using Terr
 Configured the services above, run the script "run.sh". It will display an options menu on the screen
 In the first option, Infra will be created on AWS. Terraform will create an inventory file with the EC2 IP. 
 
+Option menu to be chosen:
+
         $ sh run.sh 
           Welcome to IaC Adventure
           [ 1 ] Create EC2 on AWS
