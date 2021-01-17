@@ -10,7 +10,7 @@ This project aims to create and configure an infrastructure as a code using Terr
     - Terraform
     - Ansible
 
-- Clone the repo and give the automate.sh file permission with chmod + x
+- Clone the repo and give the automate.sh file permission with chmod +x
 
 <br>
 
@@ -25,6 +25,6 @@ Set the path to your aws .pem key in the terraform/inventory.tmpl file.
 
 <b>ansible_ssh_private_key_file='path/your-key.pem'</b>
 
-This file is responsible for creating the config that the ansible playbook will access, customize with the ec2 username, key address and host group name for example.
+This file is responsible for creating the config that the ansible playbook will access, customize with the EC2 username, key address and host group name for example.
 
 Customize the variables.tf file if necessary
