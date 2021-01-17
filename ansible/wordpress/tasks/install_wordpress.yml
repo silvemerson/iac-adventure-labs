@@ -1,0 +1,43 @@
+---
+- name: 'Baixa o arquivo de instalacao do Wordpress'
+  become: true
+  get_url:
+    url: 'https://br.wordpress.org/latest-pt_BR.zip'
+    dest:  '/tmp/wordpress.zip'
+    mode: 0440
+
+- name: 'Descompacta o wordpress'
+  become: true
+  unarchive:
+    src: '/tmp/wordpress.zip'
+    dest: /var/www/
+    remote_src: True
+
+- copy:
+    src: '/var/www/wordpress/wp-config-sample.php'
+    dest: '/var/www/wordpress/wp-config.php'
+    remote_src: yes
+  become: true
+
+- name: 'Configura o wp-config com as entradas do banco de dados'
+  become: true     
+  replace:
+    path: '/var/www/wordpress/wp-config.php'
+    regexp: "{{ item.regex }}"
+    replace: "{{ item.value }}"
+    backup: yes
+  with_items:
+    - { regex: 'nome_do_banco_de_dados_aqui', value: 'wordpress_db'}
+    - { regex: 'nome_de_usuario_aqui', value: 'wordpress_user'}
+    - { regex: 'senha_aqui', value: 'mudar@123'}
+
+
+- name: 'Configura Apache para servir o Wordpress'
+  copy:
+     src: 'wordpress/files/000-default.conf'
+     dest: '/etc/apache2/sites-available/000-default.conf'
+  become: True
+  notify:
+    - restart apache
+
+ 

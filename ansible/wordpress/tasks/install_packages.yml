@@ -1,0 +1,16 @@
+---
+- name: Instala pacotes de dependencias do sistema operacional
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+      - php7.4
+      - apache2
+      - libapache2-mod-php7.4
+      - php-gd
+      - php-ssh2
+      - mysql-server
+      - php-mysql
+      - python3-pymysql
+      - unzip

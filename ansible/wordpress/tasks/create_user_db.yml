@@ -1,0 +1,11 @@
+---
+  - name: Criar usuário no banco
+    become: true
+    mysql_user:
+      login_user: root
+      login_password: '{{ mysql_root_password }}'
+
+      name: wordpress_user
+      password: '{{ wordpress_password }}'
+      priv: 'wordpress_db.*:ALL'
+      state: present

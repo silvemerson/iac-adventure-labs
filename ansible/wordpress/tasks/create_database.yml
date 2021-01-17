@@ -1,0 +1,8 @@
+---
+- name: Criar o banco de dados
+  become: true
+  mysql_db:
+    name: wordpress_db
+    login_user: root
+    login_password: '{{ mysql_root_password }}'
+    state: present

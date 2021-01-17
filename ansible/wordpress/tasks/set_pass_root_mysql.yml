@@ -1,0 +1,10 @@
+---
+- name: update mysql root password for root account
+  become: true
+  mysql_user:
+      name: root
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+      host: 'localhost'
+      password: '{{ mysql_root_password }}'
+      priv: "*.*:ALL,GRANT"
+      check_implicit_admin: true
