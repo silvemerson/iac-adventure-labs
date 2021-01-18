@@ -10,7 +10,7 @@ This project aims to create and configure an infrastructure as a code using Terr
     - Terraform
     - Ansible
 
-- Clone the repo and give the automate.sh file permission with chmod +x
+- Clone the repo and give the run.sh file permission with chmod +x
 
 <br>
 
