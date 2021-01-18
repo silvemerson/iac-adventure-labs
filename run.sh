@@ -16,6 +16,7 @@ echo "[ 2 ] Delete EC2"
 
 echo "[ 3 ] Install Wordpress by Ansible"
 
+echo "[ 4 ] Exit"
 
 read op
 
@@ -45,6 +46,12 @@ cd .. ; ansible-playbook ansible/wordpress_main.yml -i terraform/inventory
 
 ;;
 
-*)echo "Usage: {1|2|3}"
+  4) Exit
+
+exit 
+
+;;
+
+*)echo "Usage: {1|2|3|4}"
 esac
 done
