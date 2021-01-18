@@ -1,5 +1,5 @@
 #NAME:              run.sh
-#VERSION:           2.0
+#VERSION:           1.3
 #DESCRIPTION:       Cria uma stack automatizada IaC(Terraform+Ansible)
 #DATE OF CREATION:  17/01/2021
 #DEVELOPED BY:      Emerson Araujo da Silva
