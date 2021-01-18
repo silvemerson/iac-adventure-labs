@@ -8,6 +8,7 @@
 
 echo "Welcome to IaC Adventure"
 
+while : ; do
 
 echo "[ 1 ] Create EC2 on AWS"
 
@@ -46,3 +47,4 @@ cd .. ; ansible-playbook ansible/wordpress_main.yml -i terraform/inventory
 
 *)echo "Usage: {1|2|3}"
 esac
+done
