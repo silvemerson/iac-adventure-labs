@@ -26,6 +26,9 @@ case $op in
 
 echo "TERRAFORM INIT"
 cd terraform/ ; terraform init
+echo "TERRAFORM VALIDATE"
+echo ""
+terraform validate
 echo "CREATING AWS INFRA"
 echo ""
 terraform apply -auto-approve 
@@ -47,7 +50,7 @@ cd .. ; ansible-playbook ansible/wordpress_main.yml -i terraform/inventory
 ;;
 
   4) Exit
-
+echo "Bye"
 exit 
 
 ;;
